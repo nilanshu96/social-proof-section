@@ -1,0 +1,31 @@
+main {
+  min-height: 90vh;
+  display: flex;
+}
+
+#social-proof-section {
+  display: grid;
+  grid-template-areas: "head ratings" "details ratings" "comments comments";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: max-content max-content max-content;
+  height: max-content;
+  align-self: center;
+  justify-self: center;
+}
+#social-proof-section > h1 {
+  grid-area: head;
+}
+#social-proof-section > p {
+  grid-area: details;
+}
+
+#rating-list {
+  grid-area: ratings;
+}
+
+#comment-list {
+  grid-area: comments;
+  display: flex;
+}
+
+/*# sourceMappingURL=style.css.map */
