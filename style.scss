@@ -21,13 +21,38 @@ main {
     & > p {
         grid-area: details
     }
+
+    .card {
+        display: grid;
+        grid-template-areas: "pic head1"
+                             "pic head2"
+                             "quote quote";
+
+        & > h2 {
+            grid-area: head1;
+        }
+
+        & > h3 {
+            grid-area: head2;
+        }
+
+        & > img {
+            grid-area: pic;
+        }
+
+        & > blockquote {
+            grid-area: quote;
+        }
+    }
 }
 
 #rating-list {
     grid-area: ratings;
+    list-style: none;
 }
 
 #comment-list {
     grid-area: comments;
     display: flex;
+    list-style: none;
 }

@@ -18,14 +18,32 @@ main {
 #social-proof-section > p {
   grid-area: details;
 }
+#social-proof-section .card {
+  display: grid;
+  grid-template-areas: "pic head1" "pic head2" "quote quote";
+}
+#social-proof-section .card > h2 {
+  grid-area: head1;
+}
+#social-proof-section .card > h3 {
+  grid-area: head2;
+}
+#social-proof-section .card > img {
+  grid-area: pic;
+}
+#social-proof-section .card > blockquote {
+  grid-area: quote;
+}
 
 #rating-list {
   grid-area: ratings;
+  list-style: none;
 }
 
 #comment-list {
   grid-area: comments;
   display: flex;
+  list-style: none;
 }
 
 /*# sourceMappingURL=style.css.map */
