@@ -2,25 +2,54 @@
 /* neutral colors */
 /* body font */
 /* font */
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 15px;
+  min-height: 100vh;
+}
+
+body {
+  background: url(./images/bg-pattern-top-desktop.svg) no-repeat top, url(./images/bg-pattern-bottom-desktop.svg) no-repeat bottom;
+}
+
 main {
   min-height: 90vh;
   display: flex;
+  justify-content: center;
 }
 
 #social-proof-section {
   display: grid;
   grid-template-areas: "head ratings" "details ratings" "comments comments";
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: max-content max-content max-content;
+  grid-template-columns: repeat(2, 36.25rem);
+  grid-template-rows: repeat(3, auto);
   height: max-content;
+  width: max-content;
   align-self: center;
-  justify-self: center;
+  padding: 5rem;
+  font-family: "Spartan", sans-serif;
+  color: #502050;
 }
 #social-proof-section > h1 {
   grid-area: head;
+  max-width: 400px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  letter-spacing: -0.05em;
+  font-size: 3.45em;
+  font-weight: 700;
+  align-self: flex-end;
+  line-height: 1;
 }
 #social-proof-section > p {
   grid-area: details;
+  font-size: 1em;
+  max-width: 460px;
+  line-height: 1.7;
 }
 #social-proof-section .card {
   display: grid;
@@ -40,14 +69,61 @@ main {
 }
 
 #rating-list {
+  padding-inline-start: 0;
   grid-area: ratings;
   list-style: none;
+  margin-block-start: 0;
+  max-width: max-content;
+  margin-top: 1rem;
+}
+#rating-list > li {
+  margin-bottom: 1.2rem;
+  padding: 1.2rem 1.5rem;
+  padding-right: 4rem;
+  background-color: #f7f2f7;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-size: 0.9em;
+  display: flex;
+  align-content: center;
+}
+#rating-list > li:nth-child(1) {
+  margin-left: 0rem;
+}
+#rating-list > li:nth-child(3) {
+  margin-right: 0rem;
+}
+#rating-list > li:nth-child(2) {
+  margin-left: 3rem;
+}
+#rating-list > li:nth-child(2) {
+  margin-right: 3rem;
+}
+#rating-list > li:nth-child(3) {
+  margin-left: 6rem;
+}
+#rating-list > li:nth-child(1) {
+  margin-right: 6rem;
+}
+#rating-list > li > .stars {
+  margin-right: 1rem;
+}
+#rating-list > li > .stars > * {
+  margin: 0 0.2em;
+}
+#rating-list > li > span {
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 #comment-list {
+  max-width: 1000px;
   grid-area: comments;
   display: flex;
   list-style: none;
+  align-self: center;
+  justify-self: center;
 }
 
 /*# sourceMappingURL=style.css.map */
