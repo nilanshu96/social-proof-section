@@ -1,127 +1,165 @@
 @use './config';
 
 body {
-    background: url(./images/bg-pattern-top-desktop.svg) no-repeat top, url(./images/bg-pattern-bottom-desktop.svg) no-repeat bottom;
+  background: url(./images/bg-pattern-top-desktop.svg) no-repeat top,
+    url(./images/bg-pattern-bottom-desktop.svg) no-repeat bottom;
 }
 
 main {
-    min-height: 90vh;
-    display: flex;
-    justify-content: center;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
 }
 
 #social-proof-section {
-    display: grid;
-    grid-template-areas: "head ratings"
-                         "details ratings"
-                         "comments comments";
-    grid-template-columns: repeat(2, 36.25rem);
-    grid-template-rows: repeat(3, auto);
-    height: max-content;
-    width: max-content;
-    align-self: center;
-    
-    padding: 5rem;
-    font-family: config.$font-family-spartan;
+  display: grid;
+  grid-template-areas:
+    "head ratings"
+    "details ratings"
+    "comments comments";
+  grid-template-columns: 36.25rem 32.7rem;
+  grid-template-rows: repeat(3, auto);
+  height: max-content;
+  width: max-content;
+  align-self: center;
 
-    color: config.$very-dark-magenta;
+  padding: 5rem;
+  font-family: config.$font-family-spartan;
 
-    
+  color: config.$very-dark-magenta;
 
-    & > h1 {
-        grid-area: head;
-        max-width: 400px;
-        margin-block-start: 0;
-        margin-block-end: 0;
-        letter-spacing: -0.05em;
-        font-size: 3.45em;
-        font-weight: config.$font-weight-bold;
-        align-self: flex-end;
-        line-height: 1;
-    }
+  & > h1 {
+    grid-area: head;
+    max-width: 400px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    letter-spacing: -0.05em;
+    font-size: 3.45em;
+    font-weight: config.$font-weight-bold;
+    align-self: flex-end;
+    line-height: 1;
+  }
 
-    & > p {
-        grid-area: details;
-        font-size: 1em;
-        max-width: 460px;
-        line-height: 1.7;
-    }
+  & > p {
+    grid-area: details;
+    font-size: 1em;
+    max-width: 460px;
+    line-height: 1.7;
+  }
 
-    .card {
-        display: grid;
-        grid-template-areas: "pic head1"
-                             "pic head2"
-                             "quote quote";
-
-        & > h2 {
-            grid-area: head1;
-        }
-
-        & > h3 {
-            grid-area: head2;
-        }
-
-        & > img {
-            grid-area: pic;
-        }
-
-        & > blockquote {
-            grid-area: quote;
-        }
-    }
+  
 }
 
 #rating-list {
-    padding-inline-start: 0;
-    grid-area: ratings;
-    list-style: none;
-    margin-block-start: 0;
-    max-width: max-content;
-    margin-top: 1rem;
+  padding-inline-start: 0;
+  grid-area: ratings;
+  list-style: none;
+  margin-block-start: 0;
+  max-width: max-content;
+  margin-top: 1rem;
 
-    & > li {
-        margin-bottom: 1.2rem;
-        padding: 1.2rem 1.5rem;
-        padding-right: 4rem;
-        background-color: config.$light-grayish-magenta;
-        border-radius: 0.5rem;
-        font-weight: config.$font-weight-bold;
-        font-size: 0.9em;
-        display: flex;
-        align-content: center;
-        
+  & > li {
+    margin-bottom: 1.2rem;
+    padding: 1.2rem 1.5rem;
+    padding-right: 4rem;
+    background-color: config.$light-grayish-magenta;
+    border-radius: 0.5rem;
+    font-weight: config.$font-weight-bold;
+    font-size: 0.9em;
+    display: flex;
+    align-content: center;
 
-        @for $i from 0 through 2 {
-            &:nth-child(#{$i + 1}) {
-                margin-left: $i*3rem;
-            }
-            &:nth-child(#{3-$i}) {
-                margin-right: $i*3rem;
-            }
-        }
-
-        & > .stars {
-            margin-right: 1rem;
-
-            & > * {
-                margin: 0 0.2em;
-            }
-        }
-
-        & > span {
-            display: flex;
-            justify-content: center;
-            align-content: center;
-
-        }
+    @for $i from 0 through 2 {
+      &:nth-child(#{$i + 1}) {
+        margin-left: $i * 3rem;
+      }
+      &:nth-child(#{3-$i}) {
+        margin-right: $i * 3rem;
+      }
     }
+
+    & > .stars {
+      margin-right: 1rem;
+
+      & > * {
+        margin: 0 0.2em;
+      }
+    }
+
+    & > span {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+    }
+  }
 }
 
 #comment-list {
-    max-width: 1000px;
-    grid-area: comments;
-    display: flex;
-    list-style: none;
-    align-self: center;
-    justify-self: center;
+  grid-area: comments;
+  padding-inline-start: 0;
+  display: flex;
+  list-style: none;
+  align-self: center;
+  justify-self: center;
+  justify-content: space-between;
+  
+
+  color: config.$white;
+
+  & > li {
+    display: block;
+    flex: 0 0 31.5%;
+  }
+
+  .card {
+    
+    display: grid;
+    grid-template-areas:
+      "pic head1"
+      "pic head2"
+      "quote quote";
+    border-radius: 0.8em;
+
+    grid-template-columns: 25% 75%;
+
+    background-color: config.$very-dark-magenta;
+
+    & > h2, h3 {
+        margin-block-start: 0;
+        margin-block-end: 0;
+        font-size: 1em;
+    }
+
+    & > h2 {
+      grid-area: head1;
+      font-weight: config.$font-weight-bold;
+      align-self: flex-end;
+      
+    }
+
+    & > h3 {
+      font-weight: config.$font-weight-medium;
+      grid-area: head2;
+      align-self: flex-start;
+      color: config.$soft-pink;
+    }
+
+    & > img {
+      grid-area: pic;
+      border-radius: 50%;
+      transform: scale(0.5);
+      
+      justify-self: flex-end;
+    }
+
+    & > blockquote {
+      grid-area: quote;
+      margin-block-start: 0em;
+      margin-block-end: 0;
+      margin-inline-start: 1.5rem;
+      margin-inline-end: 1.4rem;
+      line-height: 1.7;
+      font-size: 0.9em;
+    }
+  }
 }
