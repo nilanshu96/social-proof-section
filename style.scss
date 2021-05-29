@@ -5,6 +5,12 @@ body {
     url(./images/bg-pattern-bottom-desktop.svg) no-repeat bottom;
 }
 
+@include config.mobile {
+  body {
+    background: url(./images/bg-pattern-top-mobile.svg) no-repeat top, url(./images/bg-pattern-bottom-mobile.svg) no-repeat bottom;
+  }
+}
+
 main {
   min-height: 90vh;
   display: flex;
@@ -17,7 +23,7 @@ main {
     "head ratings"
     "details ratings"
     "comments comments";
-  grid-template-columns: minmax(25rem, 36.7rem) minmax(32.7rem, 36rem);
+  grid-template-columns: minmax(20rem, 36.7rem) minmax(32.7rem, 36rem);
   grid-template-rows: repeat(3, auto);
   height: max-content;
   width: max-content;
@@ -124,7 +130,7 @@ main {
   }
 
   .card {
-    padding: 1.5em 0.5em 2em 0.5em;
+    padding: 1.5em 0.5em 1.5em 0.5em;
     display: grid;
     grid-template-areas:
       "pic head1"
