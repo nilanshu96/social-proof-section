@@ -62,6 +62,31 @@ main {
   color: #937b92;
 }
 
+@media screen and (max-width: 1024px) {
+  #social-proof-section {
+    margin-top: 3rem;
+    grid-template-areas: "head" "details" "ratings" "ratings" "comments" "comments" "comments";
+    grid-template-columns: auto;
+    padding: 2rem;
+    max-width: 540px;
+    min-width: 360px;
+  }
+  #social-proof-section > h1, #social-proof-section > p {
+    align-self: center;
+    text-align: center;
+    justify-self: center;
+  }
+  #social-proof-section > h1 {
+    font-size: 2.5em;
+  }
+  #social-proof-section > p {
+    font-size: 0.9em;
+  }
+  #social-proof-section > ul {
+    width: 100%;
+    max-width: none;
+  }
+}
 #rating-list {
   padding-inline-start: 0;
   grid-area: ratings;
@@ -70,6 +95,11 @@ main {
   max-width: max-content;
   margin-top: 1rem;
   justify-self: flex-end;
+}
+@media screen and (max-width: 1024px) {
+  #rating-list {
+    justify-self: center;
+  }
 }
 #rating-list > li {
   margin-bottom: 1.2rem;
@@ -82,23 +112,33 @@ main {
   display: flex;
   align-content: center;
 }
-#rating-list > li:nth-child(1) {
-  margin-left: 0rem;
+@media screen and (min-width: 1024px) {
+  #rating-list > li:nth-child(1) {
+    margin-left: 0rem;
+  }
+  #rating-list > li:nth-child(3) {
+    margin-right: 0rem;
+  }
+  #rating-list > li:nth-child(2) {
+    margin-left: 3rem;
+  }
+  #rating-list > li:nth-child(2) {
+    margin-right: 3rem;
+  }
+  #rating-list > li:nth-child(3) {
+    margin-left: 6rem;
+  }
+  #rating-list > li:nth-child(1) {
+    margin-right: 6rem;
+  }
 }
-#rating-list > li:nth-child(3) {
-  margin-right: 0rem;
-}
-#rating-list > li:nth-child(2) {
-  margin-left: 3rem;
-}
-#rating-list > li:nth-child(2) {
-  margin-right: 3rem;
-}
-#rating-list > li:nth-child(3) {
-  margin-left: 6rem;
-}
-#rating-list > li:nth-child(1) {
-  margin-right: 6rem;
+@media screen and (max-width: 1024px) {
+  #rating-list > li {
+    flex-direction: column;
+    padding: 1rem 1.2rem;
+    row-gap: 0.7rem;
+    margin-bottom: 1rem;
+  }
 }
 #rating-list > li > .stars {
   margin-right: 1rem;
@@ -108,6 +148,7 @@ main {
 }
 #rating-list > li > span {
   display: flex;
+  align-self: center;
   justify-content: center;
   align-content: center;
 }
@@ -123,27 +164,36 @@ main {
   margin-top: 3.8rem;
   color: white;
 }
+@media screen and (max-width: 1024px) {
+  #comment-list {
+    flex-direction: column;
+    margin-top: 0;
+    row-gap: 1rem;
+  }
+}
 #comment-list > li {
   display: block;
   flex: 0 0 31.5%;
 }
-#comment-list > li:nth-child(2) {
-  margin-top: 1rem;
-}
-#comment-list > li:nth-child(3) {
-  margin-bottom: 1rem;
-}
-#comment-list > li:nth-child(3) {
-  margin-top: 2rem;
-}
-#comment-list > li:nth-child(2) {
-  margin-bottom: 2rem;
-}
-#comment-list > li:nth-child(4) {
-  margin-top: 3rem;
-}
-#comment-list > li:nth-child(1) {
-  margin-bottom: 3rem;
+@media screen and (min-width: 1024px) {
+  #comment-list > li:nth-child(2) {
+    margin-top: 1rem;
+  }
+  #comment-list > li:nth-child(3) {
+    margin-bottom: 1rem;
+  }
+  #comment-list > li:nth-child(3) {
+    margin-top: 2rem;
+  }
+  #comment-list > li:nth-child(2) {
+    margin-bottom: 2rem;
+  }
+  #comment-list > li:nth-child(4) {
+    margin-top: 3rem;
+  }
+  #comment-list > li:nth-child(1) {
+    margin-bottom: 3rem;
+  }
 }
 #comment-list .card {
   padding: 1.5em 0.5em 1.5em 0.5em;
@@ -154,10 +204,20 @@ main {
   grid-template-columns: 25% 75%;
   background-color: #502050;
 }
-#comment-list .card > h2, #comment-list .card h3 {
+@media screen and (max-width: 1024px) {
+  #comment-list .card {
+    padding: 1em 0.5em;
+  }
+}
+#comment-list .card > h2, #comment-list .card > h3 {
   margin-block-start: 0;
   margin-block-end: 0;
   font-size: 0.9em;
+}
+@media screen and (max-width: 1024px) {
+  #comment-list .card > h2, #comment-list .card > h3 {
+    font-size: 0.88em;
+  }
 }
 #comment-list .card > h2 {
   grid-area: head1;
@@ -186,6 +246,14 @@ main {
   line-height: 1.7;
   font-size: 0.9em;
   color: #f7f2f7;
+}
+@media screen and (max-width: 1024px) {
+  #comment-list .card > blockquote {
+    font-size: 0.8em;
+  }
+  #comment-list .card > blockquote > p {
+    margin-block-start: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
