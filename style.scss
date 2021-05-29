@@ -17,7 +17,7 @@ main {
     "head ratings"
     "details ratings"
     "comments comments";
-  grid-template-columns: 36.25rem 32.7rem;
+  grid-template-columns: minmax(25rem, 36.7rem) minmax(32.7rem, 36rem);
   grid-template-rows: repeat(3, auto);
   height: max-content;
   width: max-content;
@@ -45,6 +45,7 @@ main {
     font-size: 1em;
     max-width: 460px;
     line-height: 1.7;
+    color: config.$dark-grayish-magenta;
   }
 
   
@@ -57,6 +58,7 @@ main {
   margin-block-start: 0;
   max-width: max-content;
   margin-top: 1rem;
+  justify-self: flex-end;
 
   & > li {
     margin-bottom: 1.2rem;
@@ -102,6 +104,7 @@ main {
   align-self: center;
   justify-self: center;
   justify-content: space-between;
+  margin-top: 3.8rem;
   
 
   color: config.$white;
@@ -109,16 +112,26 @@ main {
   & > li {
     display: block;
     flex: 0 0 31.5%;
+
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i + 1}) {
+        margin-top: $i * 1rem;
+      }
+      &:nth-child(#{4-$i}) {
+        margin-bottom: $i * 1rem;
+      }
+    } 
   }
 
   .card {
-    padding: 1.5em 0;
+    padding: 1.5em 0.5em 2em 0.5em;
     display: grid;
     grid-template-areas:
       "pic head1"
       "pic head2"
       "quote quote";
-    border-radius: 0.8em;
+    border-radius: 0.5em;
+    height: 100%;
 
     grid-template-columns: 25% 75%;
 
@@ -160,8 +173,10 @@ main {
       margin-inline-end: 1.4rem;
       line-height: 1.7;
       font-size: 0.9em;
-
+      color: config.$light-grayish-magenta;
       
     }
   }
+
+  
 }
